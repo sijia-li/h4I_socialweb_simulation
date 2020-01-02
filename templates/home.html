@@ -1,0 +1,45 @@
+<!-- This file inherits from the layout file-->
+
+
+<!-- add your code here that replaces the code block in layout.html-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Social Webpage</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text.css" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" 
+        rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="mian.css" />
+    </head>
+<body>
+    <div class="top-nav">
+            <a class="logo">
+                    <img src="photo1.jpeg" class="logo" />
+        <h1>Add a New Tweet</h1>
+        <form method ="POST" action="http://localhost:4000/">
+                <input type="text" name="name" placeholder="Your Name"/>
+                <input type="text" name="title" placeholder="Title"/>
+                <input type="text" name="message" placeholder="What you want to post">  
+                <button type="submit">Submit! </button> 
+        </form>
+    </div>
+    
+    <div id="navigation">
+        <ul>
+            <a href="http://localhost:1000"><li>Home</li></a>
+        </ul>
+    </div>
+   
+        {% for tweet in tweets %}
+        <div>
+            <h1> {{ tweet.name }}</h1>
+            <h2> {{ tweet.title }}</h2>
+            <h3> {{ tweet.message }}</h3>
+        </div>
+        {%endfor%}
+
+</body>
+</html>
+     
+
